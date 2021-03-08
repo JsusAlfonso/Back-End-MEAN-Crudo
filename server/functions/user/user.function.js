@@ -79,7 +79,8 @@ exports.fnCheckLogin = (jsnparams) => {
                             });
                         } else {
                             resolve({
-                                intStatus: 2
+                                intStatus: 2,
+                                jsnAnswer: { 'Error': 'User not found' }
                             });
                         }
                     }
