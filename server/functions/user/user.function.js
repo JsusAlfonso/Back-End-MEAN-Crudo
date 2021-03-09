@@ -20,6 +20,7 @@ exports.fnRegisterAdmin = (jsnBody) => {
                     jsnAnswer: { 'Error': 'Cannot connect to the DB' }
                 });
             } else {
+                delete jsnBody.strConfirmPassword;
                 //jsnBody.strPassword = 1231231231;
                 let myQuery = jsnBody;
                 db.collection('clUser').insertOne(myQuery, (err, result) => {
@@ -27,7 +28,7 @@ exports.fnRegisterAdmin = (jsnBody) => {
                         console.error(err + '\n');
                         dbParent.close();
                         reject({
-                            strAnswer: 'Data insert error',
+                            jsnAnswer: { 'Error': 'Data insert error' },
                             intStatus: 2
                         });
                     } else {

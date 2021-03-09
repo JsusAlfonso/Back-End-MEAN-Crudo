@@ -5,7 +5,8 @@ const strUrl = `mongodb://localhost:27017/${strDatabaseName}`;
 const nmbPort = 3000;
 
 const jsnMongoOptions = {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 };
 
 module.exports = {
